@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guias Práticos de Enfermagem | Sinais Vitais e Atendimento ao AVC</title>
+<meta name="description" content="Dois e-books práticos para técnicos e estudantes de enfermagem: medir corretamente os sinais vitais e atender o paciente com doença neurológica vascular (AVC e AIT).">
+<style>
+:root{--azul:#0b4f6c;--azul2:#0e7490;--verde:#14b8a6;--verde-claro:#e6fffb;--texto:#1f2937;--cinza:#64748b;--branco:#fff;--vermelho:#dc2626;--fundo:#f4f9fa}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--texto);background:var(--branco);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+h1,h2,h3{line-height:1.2;color:var(--azul)}
+h2{font-size:clamp(1.6rem,3.5vw,2.25rem);margin-bottom:14px;text-align:center}
+.lead{text-align:center;color:var(--cinza);max-width:680px;margin:0 auto 40px;font-size:1.05rem}
+.tag{display:inline-block;background:var(--verde-claro);color:var(--azul2);font-weight:700;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:16px}
+
+/* Cabeçalho */
+header{position:sticky;top:0;z-index:50;background:var(--azul);color:#fff;box-shadow:0 2px 12px rgba(0,0,0,.15)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.logo{font-weight:800;font-size:1rem;display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none}
+.logo b{background:var(--verde);color:var(--azul);border-radius:8px;padding:3px 9px;font-size:.95rem}
+.menu{display:flex;gap:24px;list-style:none}
+.menu a{color:#fff;text-decoration:none;font-size:.95rem;opacity:.9}
+.menu a:hover{opacity:1}
+
+/* Botões */
+.btn{display:inline-block;background:var(--verde);color:var(--azul);font-weight:800;text-decoration:none;padding:15px 28px;border-radius:999px;border:0;cursor:pointer;font-size:1rem;text-align:center;letter-spacing:.02em;transition:transform .15s,box-shadow .15s;box-shadow:0 8px 22px rgba(20,184,166,.35)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(20,184,166,.45)}
+.btn-sm{padding:9px 18px;font-size:.88rem;box-shadow:none}
+.btn-azul{background:var(--azul);color:#fff;box-shadow:0 8px 22px rgba(11,79,108,.3)}
+.btn-azul:hover{box-shadow:0 12px 28px rgba(11,79,108,.4)}
+.btn-bloco{display:block;width:100%}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,var(--azul) 0%,var(--azul2) 60%,#0f766e 100%);color:#fff;padding:72px 0 80px}
+.hero h1{color:#fff;font-size:clamp(2rem,5vw,3.2rem);margin-bottom:18px}
+.hero h1 em{font-style:normal;color:var(--verde)}
+.hero p.sub{font-size:1.15rem;opacity:.92;margin-bottom:12px}
+.hero .resumo{font-size:.98rem;opacity:.85;margin-bottom:30px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.capas{position:relative;height:380px}
+.capa{position:absolute;width:230px;height:320px;border-radius:14px;padding:24px 20px;color:#fff;box-shadow:0 24px 50px rgba(0,0,0,.35);display:flex;flex-direction:column;justify-content:space-between}
+.capa small{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
+.capa strong{font-size:1.35rem;line-height:1.15}
+.capa span{font-size:.8rem;opacity:.85}
+.capa-1{left:0;top:30px;background:linear-gradient(160deg,#14b8a6,#0b6b78);transform:rotate(-6deg)}
+.capa-2{right:0;top:0;background:linear-gradient(160deg,#1e3a5f,#0b4f6c);transform:rotate(5deg)}
+.selo{position:absolute;bottom:4px;left:50%;transform:translateX(-50%);background:#fff;color:var(--azul);font-weight:700;font-size:.85rem;padding:8px 16px;border-radius:999px;white-space:nowrap;box-shadow:0 6px 16px rgba(0,0,0,.2)}
+.provas{display:flex;flex-wrap:wrap;gap:18px;margin-top:26px;font-size:.92rem;opacity:.9}
+.provas span::before{content:"✓ ";color:var(--verde);font-weight:800}
+
+/* Problemas */
+.problemas{background:var(--fundo)}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{background:#fff;border-radius:16px;padding:26px;box-shadow:0 4px 16px rgba(11,79,108,.06);border-top:4px solid var(--verde)}
+.card .ic{font-size:1.6rem;margin-bottom:10px}
+.card h3{font-size:1.05rem;margin-bottom:8px}
+.card p{font-size:.95rem;color:var(--cinza)}
+.transicao{text-align:center;margin-top:44px;font-size:1.1rem;color:var(--azul);font-weight:600}
+
+/* Produtos */
+.produtos-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.produto{border:1px solid #d7e8ec;border-radius:20px;padding:32px;display:flex;flex-direction:column;background:#fff;position:relative;transition:box-shadow .2s}
+.produto:hover{box-shadow:0 18px 40px rgba(11,79,108,.12)}
+.produto .destaque{position:absolute;top:-13px;left:28px;background:var(--verde);color:var(--azul);font-weight:800;font-size:.75rem;padding:5px 12px;border-radius:999px;text-transform:uppercase;letter-spacing:.05em}
+.produto h3{font-size:1.4rem;margin-bottom:6px}
+.produto .sub{color:var(--azul2);font-weight:600;margin-bottom:14px;font-size:.98rem}
+.produto p.desc{color:var(--cinza);margin-bottom:18px}
+.produto ul{list-style:none;margin-bottom:24px;flex:1}
+.produto li{padding:7px 0 7px 28px;position:relative;font-size:.95rem;border-bottom:1px dashed #e2eef1}
+.produto li::before{content:"✓";position:absolute;left:0;color:var(--verde);font-weight:800}
+.meta{display:flex;gap:14px;font-size:.85rem;color:var(--cinza);margin-bottom:22px;flex-wrap:wrap}
+.meta span{background:var(--fundo);padding:4px 10px;border-radius:8px}
+
+/* Para quem */
+.para-quem{background:var(--fundo)}
+.quem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.quem{background:#fff;border-radius:16px;padding:26px;text-align:center}
+.quem .ic{font-size:2.2rem;margin-bottom:8px}
+.quem h3{font-size:1.05rem;margin-bottom:6px}
+.quem p{font-size:.93rem;color:var(--cinza)}
+
+/* FAQ */
+.faq{max-width:780px;margin:0 auto}
+details{background:#fff;border:1px solid #d7e8ec;border-radius:12px;margin-bottom:12px;padding:18px 22px}
+summary{cursor:pointer;font-weight:700;color:var(--azul);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.4rem;color:var(--verde);font-weight:700}
+details[open] summary::after{content:"–"}
+details p{margin-top:12px;color:var(--cinza)}
+
+/* CTA final */
+.final{background:linear-gradient(135deg,var(--azul),var(--azul2));color:#fff;text-align:center}
+.final h2{color:#fff}
+.final p{opacity:.9;max-width:620px;margin:0 auto 28px}
+
+/* Rodapé */
+footer{background:#082f42;color:#b8d4dd;padding:40px 0;font-size:.88rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:flex-start}
+footer strong{color:#fff}
+footer p{max-width:620px;margin-top:8px;opacity:.85}
+
+/* Responsivo */
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr;text-align:center}
+  .hero .btn{width:100%;max-width:340px}
+  .provas{justify-content:center}
+  .capas{height:340px;max-width:440px;margin:0 auto}
+  .grid-4{grid-template-columns:1fr 1fr}
+  .produtos-grid{grid-template-columns:1fr}
+  .quem-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+  .menu{display:none}
+  section{padding:52px 0}
+  .capa{width:190px;height:270px;padding:18px 16px}
+  .capa strong{font-size:1.1rem}
+  .capas{height:300px}
+  .capa-1{left:4%}
+  .capa-2{right:4%}
+  .grid-4,.quem-grid{grid-template-columns:1fr}
+  .produto{padding:26px 22px}
+}
+/* Cronómetro de urgência */
+.urgencia{background:#fff7ed;border-bottom:1px solid #fed7aa;color:#7c2d12;padding:12px 0;font-size:.95rem}
+.urgencia .wrap{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px 18px;text-align:center}
+.urgencia strong{color:var(--vermelho)}
+.contagem{display:flex;gap:6px;align-items:center;font-variant-numeric:tabular-nums}
+.contagem div{background:var(--azul);color:#fff;border-radius:8px;min-width:52px;padding:6px 8px;text-align:center}
+.contagem b{display:block;font-size:1.25rem;line-height:1}
+.contagem small{font-size:.65rem;text-transform:uppercase;letter-spacing:.06em;opacity:.85}
+.urgencia[hidden]{display:none}
+@media(max-width:420px){
+  .contagem div{min-width:44px;padding:5px 6px}
+  .contagem b{font-size:1.05rem}
+}
+@media(max-width:420px){
+  .capa{width:160px;height:235px}
+  .capa-1{left:0}
+  .capa-2{right:0}
+  .btn{font-size:.95rem;padding:14px 22px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#inicio" class="logo"><b>ENF</b> Guias Práticos</a>
+    <ul class="menu">
+      <li><a href="#problemas">Desafios</a></li>
+      <li><a href="#produtos">Os e-books</a></li>
+      <li><a href="#para-quem">Para quem é</a></li>
+      <li><a href="#faq">Perguntas</a></li>
+    </ul>
+    <a href="#produtos" class="btn btn-sm">COMPRAR AGORA</a>
+  </div>
+</header>
+
+<!-- CRONÓMETRO DE URGÊNCIA -->
+<div class="urgencia" id="urgencia" hidden>
+  <div class="wrap">
+    <span>⏳ <strong>Oferta por tempo limitado.</strong> Termina em:</span>
+    <div class="contagem" aria-live="off">
+      <div><b id="dias">00</b><small>dias</small></div>
+      <div><b id="horas">00</b><small>horas</small></div>
+      <div><b id="minutos">00</b><small>min</small></div>
+      <div><b id="segundos">00</b><small>seg</small></div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="inicio" style="padding-top:64px">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="tag">Material prático para técnicos e estudantes</span>
+      <h1>Meça com precisão. <em>Atenda com segurança.</em></h1>
+      <p class="sub">Dois guias ilustrados para o dia a dia da enfermagem: a técnica certa para os sinais vitais e os erros que nunca deve cometer no paciente com AVC ou AIT.</p>
+      <p class="resumo">Passo a passo, valores de referência, checklists para imprimir e perguntas de revisão com gabarito. Tudo num formato direto, para consultar à cabeceira ou estudar em casa.</p>
+      <a href="#produtos" class="btn">COMPRAR AGORA</a>
+      <div class="provas">
+        <span>Passo a passo ilustrado</span>
+        <span>Checklists para imprimir</span>
+        <span>Quiz com gabarito</span>
+      </div>
+    </div>
+    <div class="capas" aria-label="Capas dos dois e-books">
+      <div class="capa capa-1">
+        <small>E-book 1</small>
+        <div><strong>Sinais Vitais: As Técnicas Certas</strong></div>
+        <span>Pulso, respiração, temperatura, PA e SpO₂</span>
+      </div>
+      <div class="capa capa-2">
+        <small>E-book 2</small>
+        <div><strong>12 Erros Fatais no Atendimento ao Paciente com DNV</strong></div>
+        <span>Para técnicos de enfermagem</span>
+      </div>
+      <div class="selo">2 e-books · acesso imediato</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMAS -->
+<section class="problemas" id="problemas">
+  <div class="wrap">
+    <span class="tag" style="display:block;width:fit-content;margin-left:auto;margin-right:auto">Os desafios do dia a dia</span>
+    <h2>Já sentiu que a teoria não chega à prática?</h2>
+    <p class="lead">Muitos profissionais aprendem os conceitos, mas hesitam quando têm o paciente à frente. Estes são os pontos onde mais se erra.</p>
+    <div class="grid-4">
+      <div class="card">
+        <div class="ic">🩺</div>
+        <h3>Valores que não batem</h3>
+        <p>Pulso contado com o polegar, manguito pequeno para o braço ou termómetro lido cedo demais. O resultado parece correto, mas não é.</p>
+      </div>
+      <div class="card">
+        <div class="ic">⏱️</div>
+        <h3>Dúvida na hora decisiva</h3>
+        <p>Um défice súbito num doente e a dúvida sobre se é "para avisar já" ou "para esperar". Cada minuto conta num AVC.</p>
+      </div>
+      <div class="card">
+        <div class="ic">💧</div>
+        <h3>Gestos bem-intencionados que causam dano</h3>
+        <p>Dar água "só para molhar a boca", puxar o braço afetado ou dar um comprimido sem prescrição. Tudo com boa intenção, com consequências graves.</p>
+      </div>
+      <div class="card">
+        <div class="ic">📋</div>
+        <h3>Registos vagos e passagens de turno incompletas</h3>
+        <p>"Sonolento", "mais ou menos", "de manhã". Sem hora e sem detalhe, a informação perde-se entre turnos.</p>
+      </div>
+    </div>
+    <p class="transicao">Estes guias foram feitos para resolver exatamente estes problemas, com passos claros que pode aplicar no mesmo dia.</p>
+  </div>
+</section>
+
+<!-- PRODUTOS -->
+<section id="produtos">
+  <div class="wrap">
+    <span class="tag" style="display:block;width:fit-content;margin-left:auto;margin-right:auto">Escolha o seu e-book</span>
+    <h2>Dois guias, dois objetivos</h2>
+    <p class="lead">Pode comprar apenas o que precisa agora. Cada e-book tem o seu próprio checkout seguro.</p>
+
+    <div class="produtos-grid">
+
+      <!-- Produto 1 -->
+      <article class="produto">
+        <h3>E-book Sinais Vitais: As Técnicas Certas</h3>
+        <p class="sub">Medir bem é o primeiro passo de um bom cuidado</p>
+        <p class="desc">Um guia ilustrado, com 20 páginas, que mostra como medir cada sinal vital com rigor, quais erros evitar e como registar e comunicar os valores.</p>
+        <div class="meta"><span>20 páginas</span><span>Formato digital</span><span>Quiz com gabarito</span></div>
+        <ul>
+          <li>Pulso, frequência respiratória, temperatura, pressão arterial e SpO₂, passo a passo</li>
+          <li>Valores de referência para adultos e quando comunicar de imediato</li>
+          <li>Manguito, locais de medição e o que falsifica cada valor</li>
+          <li>Como usar o oxímetro e interpretar leituras pouco fiáveis</li>
+          <li>Registo e comunicação em formato SBAR, com exemplo prático</li>
+          <li>Teste final de 5 perguntas com gabarito</li>
+        </ul>
+        <a href="https://pay.kursinha.com/c/6ad34bd74b7ab03cf6625755" class="btn btn-bloco" target="_blank" rel="noopener">Comprar Sinais Vitais</a>
+      </article>
+
+      <!-- Produto 2 -->
+      <article class="produto">
+        <span class="destaque">Mais procurado</span>
+        <h3>12 Erros Fatais que um Técnico de Enfermagem Não Pode Cometer no Atendimento ao Paciente com DNV</h3>
+        <p class="sub">Doença neurológica vascular: AVC isquémico, hemorrágico e AIT</p>
+        <p class="desc">Um guia prático de 25 páginas sobre os erros mais perigosos no atendimento neurológico urgente, com alternativas seguras para cada um.</p>
+        <div class="meta"><span>25 páginas</span><span>Formato digital</span><span>Checklists para imprimir</span></div>
+        <ul>
+          <li>12 erros comuns, explicados e com o que fazer em vez deles</li>
+          <li>Reconhecimento dos sinais de alerta com a regra BE-FAST</li>
+          <li>Checklist dos primeiros 10 minutos de chegada, pronto a imprimir</li>
+          <li>Jejum oral, deglutição, glicemia, medicação e cuidados com fluidos</li>
+          <li>Quando chamar imediatamente e como fazê-lo em formato curto</li>
+          <li>Os limites do técnico: o que fazer e o que nunca fazer</li>
+          <li>Quiz de 10 perguntas, glossário e modelo de passagem de turno</li>
+        </ul>
+        <a href="https://pay.kursinha.com/c/6ad34e01dc72d3c7dc5a64f9" class="btn btn-bloco" target="_blank" rel="noopener">Comprar 12 Erros Fatais</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM -->
+<section class="para-quem" id="para-quem">
+  <div class="wrap">
+    <h2>Feito para quem está na linha da frente</h2>
+    <p class="lead">Os guias são escritos numa linguagem direta, sem jargão desnecessário, e explicam o porquê de cada passo.</p>
+    <div class="quem-grid">
+      <div class="quem">
+        <div class="ic">🎓</div>
+        <h3>Estudantes de enfermagem</h3>
+        <p>Para consolidar a prática antes dos estágios e preparar-se para avaliações, com quizzes e gabaritos.</p>
+      </div>
+      <div class="quem">
+        <div class="ic">👩‍⚕️</div>
+        <h3>Técnicos de enfermagem</h3>
+        <p>Para rever procedimentos no dia a dia, com checklists que pode imprimir e colar no posto de enfermagem.</p>
+      </div>
+      <div class="quem">
+        <div class="ic">🏥</div>
+        <h3>Equipas de urgência e internamento</h3>
+        <p>Para uniformizar a passagem de turno e reforçar a segurança do paciente em conjunto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <h2>Perguntas frequentes</h2>
+    <p class="lead">Se tiver outra dúvida, escreva-nos antes de comprar.</p>
+    <div class="faq">
+      <details>
+        <summary>Estes e-books substituem a formação ou o protocolo da minha instituição?</summary>
+        <p>Não. São materiais educativos de apoio. Os valores e condutas podem variar de serviço para serviço, e vale sempre o protocolo da sua instituição e a prescrição médica.</p>
+      </details>
+      <details>
+        <summary>Para que nível profissional são indicados?</summary>
+        <p>Para estudantes e técnicos de enfermagem, e para quem trabalha em áreas de urgência, internamento ou cuidados gerais. Os conteúdos respeitam o âmbito de atuação do técnico.</p>
+      </details>
+      <details>
+        <summary>Preciso de comprar os dois e-books?</summary>
+        <p>Não. Cada e-book é independente e tem o seu próprio link de compra. Escolha o que responde à sua necessidade neste momento.</p>
+      </details>
+      <details>
+        <summary>Em que formato recebo o material?</summary>
+        <p>Em formato digital (PDF), para ler no telemóvel, no computador ou no tablet. Pode imprimir os capítulos com checklists.</p>
+      </details>
+      <details>
+        <summary>Os conteúdos estão atualizados?</summary>
+        <p>Os valores de referência seguem diretrizes internacionais reconhecidas e são indicados como referência geral. Confirme sempre com o protocolo da sua unidade.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final">
+  <div class="wrap">
+    <h2>Pronto para atender com mais segurança?</h2>
+    <p>Escolha o e-book que responde à sua necessidade e comece hoje a aplicar um passo a passo claro e prático.</p>
+    <a href="#produtos" class="btn">COMPRAR AGORA</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <strong>Guias Práticos de Enfermagem</strong>
+      <p>Material educativo. Não substitui a formação profissional, a prescrição médica nem os protocolos institucionais. Atue sempre dentro do seu âmbito e sob supervisão.</p>
+    </div>
+    <div>
+      <a href="#produtos" style="color:#fff;text-decoration:none">Os e-books</a> ·
+      <a href="#faq" style="color:#fff;text-decoration:none">Perguntas</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/*
+  CONFIGURAÇÃO: defina a data e hora reais em que a oferta termina.
+  Formato: AAAA-MM-DDTHH:MM:SS+01:00 (+01:00 é a hora de Angola).
+  A data é fixa: não recomeça ao recarregar a página.
+  Se a data já tiver passado, o cronómetro fica escondido.
+*/
+var FIM_OFERTA = new Date("2026-10-25T23:59:59+01:00");
+
+(function () {
+  var barra = document.getElementById("urgencia");
+  var campos = {
+    dias: document.getElementById("dias"),
+    horas: document.getElementById("horas"),
+    minutos: document.getElementById("minutos"),
+    segundos: document.getElementById("segundos")
+  };
+  var intervalo;
+
+  function dois(n) { return (n < 10 ? "0" : "") + n; }
+
+  function atualizar() {
+    var restante = FIM_OFERTA.getTime() - Date.now();
+    if (restante <= 0) {
+      clearInterval(intervalo);
+      barra.hidden = true;
+      return;
+    }
+    var s = Math.floor(restante / 1000);
+    campos.dias.textContent = dois(Math.floor(s / 86400));
+    campos.horas.textContent = dois(Math.floor((s % 86400) / 3600));
+    campos.minutos.textContent = dois(Math.floor((s % 3600) / 60));
+    campos.segundos.textContent = dois(s % 60);
+    barra.hidden = false;
+  }
+
+  atualizar();
+  intervalo = setInterval(atualizar, 1000);
+})();
+</script>
+
+</body>
+</html>
